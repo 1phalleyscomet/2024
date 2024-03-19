@@ -13,7 +13,7 @@ void main()
 	printf("str==>%s\n", str);
 	printf("str[0]==>%c\n", str[0]);
 
-	char a[3] = "ÀÏ"; //ÇÑ±Û -> 2byte
+	char a[3] = "ì¼"; //í•œê¸€ -> 2byte
 	printf("str==>%s\n", a);
 
 }
