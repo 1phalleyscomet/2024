@@ -4,7 +4,7 @@
 void main()
 {
 	int a = 2, b = 3, c = 4;
-	int result1, ¸ò, ³ª¸ÓÁö;
+	int result1, ëª«, ë‚˜ë¨¸ì§€;
 	float result2;
 	result1 = a + b - c;
 	printf("%d+%d-%d=%d\n", a, b, c, result1);
@@ -15,11 +15,11 @@ void main()
 	result2 = a * b / (float)c;
 	printf("%d*%d/%d=%.1f\n", a, b, c, result2);
 
-	¸ò = c / b;
-	printf("%d/%dÀÇ ¸òÀº %d\n", c, b, ¸ò);
+	ëª« = c / b;
+	printf("%d/%dì˜ ëª«ì€ %d\n", c, b, ëª«);
 
-	³ª¸ÓÁö = c % b;
-	printf("%d%%%dÀÇ ³ª¸ÓÁö´Â %d\n", c, b, ³ª¸ÓÁö);
+	ë‚˜ë¨¸ì§€ = c % b;
+	printf("%d%%%dì˜ ë‚˜ë¨¸ì§€ëŠ” %d\n", c, b, ë‚˜ë¨¸ì§€);
 
 
 
