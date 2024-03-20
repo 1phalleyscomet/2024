@@ -1,4 +1,3 @@
-/*
 #include <stdio.h>
 
 void main()
@@ -8,4 +7,4 @@ void main()
 
 	printf("%30.25f", a);
 	printf("%30.25lf", b);
-}*/
+}
