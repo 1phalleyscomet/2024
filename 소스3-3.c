@@ -1,4 +1,3 @@
-/*
 #include <stdio.h>
 
 void main()
@@ -14,4 +13,4 @@ void main()
 
 	c = 90;
 	printf("%c", c);
-}*/
+}
