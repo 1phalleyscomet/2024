@@ -1,5 +1,5 @@
 
-// ½Ç¼ö 3°³ -> ¼Ò¼öºÎ ´õÇÑ °ª Ãâ·Â
+// ì‹¤ìˆ˜ 3ê°œ -> ì†Œìˆ˜ë¶€ ë”í•œ ê°’ ì¶œë ¥
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main(void)
@@ -7,21 +7,21 @@ int main(void)
 	float a;
 	float b;
 	float c;
-	printf("Ã¹¹øÂ° ½Ç¼ö ÀÔ·Â :");
+	printf("ì²«ë²ˆì§¸ ì‹¤ìˆ˜ ì…ë ¥ :");
 	scanf_s("%f", &a);
 	int a1; 
 	a1 = a;
-	printf("µÎ¹øÂ° ½Ç¼ö ÀÔ·Â:");
+	printf("ë‘ë²ˆì§¸ ì‹¤ìˆ˜ ì…ë ¥:");
 	scanf_s("%f", &b);
 	int b2;
 	b2 = b;
-	printf("¼¼¹øÂ° ½Ç¼ö ÀÔ·Â:");
+	printf("ì„¸ë²ˆì§¸ ì‹¤ìˆ˜ ì…ë ¥:");
 	scanf_s("%f", &c);
 	int c2;
 	c2 = c;
 	float result;
-	result = a - a1 + b - b2 + c - c2;
-	printf("¼Ò¼öºÎ: %f", result );
+	result = (a - a1) + (b - b2) + (c - c2);
+	printf("ì†Œìˆ˜ë¶€: %f", result );
 
 	return 0;
 }
