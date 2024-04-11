@@ -2,20 +2,20 @@
 #include <stdio.h>
 int main() {
 	int a;
-	int n = 0;
+	int n = 1;
 	int sum =0;
 
-	printf("¾çÀÇ »ó¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+	printf("ì–‘ì˜ ìƒìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 	scanf("%d", &a);
 
-	while (a - n <= 0) {
-		if ((a - n) % 7 == 0) {
+	while ( n <= a) {
+		if (n % 7 == 0) {
 
-			sum = sum + (a - n);
+			sum = sum + n;
 		}
 		n++;
 	}
-		printf("ÀÔ·ÂÇÑ ¼ö±îÁöÀÇ 7ÀÇ ¹è¼öÀÇ ÇÕ:%d\n", sum );
+		printf("ì…ë ¥í•œ ìˆ˜ê¹Œì§€ì˜ 7ì˜ ë°°ìˆ˜ì˜ í•©:%d\n", sum );
 		return 0;
 	
 }
