@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 int main() {
-	int dice[6] = { 0 };
+	
 	int i;
 	int sum = 0;
 
 	srand(time(NULL));
 
-	printf("ÁÖ»çÀ§¸¦ 20¹ø ´øÁø °á°ú:\n");
+	printf("ì£¼ì‚¬ìœ„ë¥¼ 20ë²ˆ ë˜ì§„ ê²°ê³¼:\n");
 
 	for (i = 0; i < 20; i++) {
 		int roll = rand() % 6; 
@@ -17,7 +17,7 @@ int main() {
 	}
 	
 
-	printf("\nÁÖ»çÀ§¸¦ 20¹ø ´øÁø °á°úÀÇ ÇÕ: %d", sum);
+	printf("\nì£¼ì‚¬ìœ„ë¥¼ 20ë²ˆ ë˜ì§„ ê²°ê³¼ì˜ í•©: %d", sum);
 
 
 
