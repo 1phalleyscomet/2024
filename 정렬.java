@@ -16,6 +16,7 @@ public class main{
     Arrays.sort(a);
     for (int i =0 ; i<a.length; i++) 
        a[i]=-a[i]   
+       역순정렬
        */
   }
 }
