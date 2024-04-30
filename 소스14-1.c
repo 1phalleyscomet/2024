@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+void main() {
+	char ss[20];
+	char tt[20];
+	int r1, r2;
+
+	puts("첫번째 문자열을 입력하세요:");
+	gets(ss);  //문자열 입출력 함수
+
+	puts("두번째 문자열을 입력하세요:");
+	gets(tt);
+
+	r1 = strlen(ss);
+	r2 = strlen(tt);
+
+	printf("첫번째 문자열의 길이:%d\n", r1);
+	printf("두번째 문자열의 길이:%d\n", r2);
+
+	if (strcmp == 0) //strcmp(ss, tt) 함수-> 문자열 비교
+
+		puts("두 문자열의 내용이 같습니다\n");
+	else
+		puts("두 문자열의 내용이 다릅니다\n");
+
+
+
+}
