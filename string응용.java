@@ -1,15 +1,15 @@
 import java.util.Scanner;
-pblic class main{
+public class main{
   public static void main(String[] args){
     Scanner sc=new Scanner(System.in);
-    int T =sc.nextLnt();
+    int T =sc.nexILnt();
     for(int t=0;t<T;t++){
       String s1=sc.next();
       String s2 = sc.next();
       System.out.println("Distances");
       for(int i=0;i<s1.length();i++){
         int dist =s2.charAt(i)-s1.charAt(i);
-        Ststem.out.print(dist+" ");
+        System.out.print(dist+" ");
       }
       System.out.println();
     }
@@ -18,7 +18,7 @@ pblic class main{
 }
 
 import java.util.Scanner;
-pblic class main{
+public class main{
   static boolean IsCapital(char t){
     if((t>='A')&&(t<='Z'))
       return true;
