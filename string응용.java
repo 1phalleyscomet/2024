@@ -2,13 +2,14 @@ import java.util.Scanner;
 public class main{
   public static void main(String[] args){
     Scanner sc=new Scanner(System.in);
-    int T =sc.nexILnt();
+    int T =sc.nextInt();
     for(int t=0;t<T;t++){
       String s1=sc.next();
       String s2 = sc.next();
       System.out.println("Distances");
       for(int i=0;i<s1.length();i++){
         int dist =s2.charAt(i)-s1.charAt(i);
+        if (dist<0) dist=dist+26;
         System.out.print(dist+" ");
       }
       System.out.println();
