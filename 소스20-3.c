@@ -16,14 +16,14 @@ int main(void) {
 	int select;
 	if ((fp = fopen("address.txt", "r+")) == NULL) {
 		if ((fp = fopen("address.txt", "w+")) == NULL) {
-			fprintf(stderr, "ÀÔ·ÂÀ» À§ÇÑ ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.");
+			fprintf(stderr, "ì…ë ¥ì„ ìœ„í•œ íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			exit(1);
 
 		}
 	}
 	while (1) {
 		menu();
-		printf("Á¤¼ö°ªÀ» ÀÔ·ÂÇÏ½Ã¿À:");
+		printf("ì •ìˆ˜ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤:");
 		scanf("%d", &select);
 		getchar();
 		switch (select) {
@@ -37,16 +37,26 @@ int main(void) {
 	return 0;
 }
 void get_record(char name[], char address[], char phone[], char desc[]) {
-	printf("ÀÌ¸§:%s\n", name);
-	printf("ÁÖ¼Ò:%s\n", address);
-	printf("ÈŞ´ëÆù:%s\n", phone);
-	printf("Æ¯Â¡:%s\n", desc);
+
+	printf("ì´ë¦„: "); gets_s(name, SIZE);
+	printf("ì£¼ì†Œ: "); gets_s(address, SIZE);
+	printf("íœ´ëŒ€í°: "); gets_s(phone, SIZE);
+	printf("íŠ¹ì§•: "); gets_s(desc, SIZE);
+}
+
+void print_record(char name[], char address[], char phone[], char desc[]) {
+
+
+	printf("ì´ë¦„:%s\n", name);
+	printf("ì£¼ì†Œ:%s\n", address);
+	printf("íœ´ëŒ€í°:%s\n", phone);
+	printf("íŠ¹ì§•:%s\n", desc);
 
 
 }
 void menu() {
 	printf("==============\n");
-	printf("1.Ãß°¡\n2.¼öÁ¤\n3.°Ë»ö\n4.Á¾·á\n");
+	printf("1.ì¶”ê°€\n2.ìˆ˜ì •\n3.ê²€ìƒ‰\n4.ì¢…ë£Œ\n");
 	printf("==============\n");
 }
 
@@ -60,7 +70,7 @@ void add_record(FILE* fp) {
 void search_record(FILE* fp) {
 	char name[SIZE], search_name[SIZE], address[SIZE], phone[SIZE], desc[SIZE];
 	fseek(fp, 0, SEEK_SET);
-	printf("Å½»öÇÏ°íÀÚ ÇÏ´Â »ç¶÷ÀÇ ÀÌ¸§:");
+	printf("íƒìƒ‰í•˜ê³ ì í•˜ëŠ” ì‚¬ëŒì˜ ì´ë¦„:");
 	gets_s(search_name, SIZE);
 
 	while (fgets(name, SIZE, fp) != NULL) {
@@ -79,7 +89,7 @@ void search_record(FILE* fp) {
 
 		}
 	}
-	printf("ÇØ´ç ÀÌ¸§ÀÇ µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.\n");
+	printf("í•´ë‹¹ ì´ë¦„ì˜ ë°ì´í„°ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 }
 void update_record(FILE* fp) {
 	char name[SIZE], address[SIZE], phone[SIZE], desc[SIZE];
@@ -87,11 +97,11 @@ void update_record(FILE* fp) {
 	FILE* temp_fp;
 
 	if ((temp_fp = fopen("temp.txt", "w")) == NULL) {
-		fprintf(stderr, "ÀÓ½Ã ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.");
+		fprintf(stderr, "ì„ì‹œ íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		exit(1);
 	}
 	fseek(fp, 0, SEEK_SET);
-	printf("¼öÁ¤ÇÏ°íÀÚ ÇÏ´Â »ç¶÷ÀÇ ÀÌ¸§:");
+	printf("ìˆ˜ì •í•˜ê³ ì í•˜ëŠ” ì‚¬ëŒì˜ ì´ë¦„:");
 	gets_s(search_name, SIZE);
 
 	int found = 0;
@@ -107,7 +117,7 @@ void update_record(FILE* fp) {
 		desc[strcspn(desc, "\n")] = 0;
 
 		if (strcmp(name, search_name) == 0) {
-			printf("»õ·Î¿î Á¤º¸¸¦ ÀÔ·ÂÇÏ½Ã¿À:\n");
+			printf("ìƒˆë¡œìš´ ì •ë³´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤:\n");
 			get_record(name, address, phone, desc);
 			found = 1;
 		}
@@ -118,21 +128,22 @@ void update_record(FILE* fp) {
 	fclose(temp_fp);
 
 	if (!found) {
-		printf("ÇØ´ç ÀÌ¸§ÀÇ µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.\n");
+		printf("í•´ë‹¹ ì´ë¦„ì˜ ë°ì´í„°ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 		remove("temp.txt");
 		return;
 	}
 
 	if (remove("address.txt") != 0) {
-		fprintf(stderr, "¿øº» ÆÄÀÏÀ» »èÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		fprintf(stderr, "ì›ë³¸ íŒŒì¼ì„ ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		exit(1);
 	}
 	if (rename("temp.txt", "address.txt") != 0) {
-		fprintf(stderr, "ÀÓ½Ã ÆÄÀÏÀ» ¿øº» ÆÄÀÏ·Î ÀÌ¸§À» º¯°æÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		fprintf(stderr, "ì„ì‹œ íŒŒì¼ì„ ì›ë³¸ íŒŒì¼ë¡œ ì´ë¦„ì„ ë³€ê²½í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		exit(1);
 	}
 	if ((fp = fopen("address.txt", "r+")) == NULL) {
-		fprintf(stderr, "ÆÄÀÏÀ» ´Ù½Ã ¿­ ¼ö ¾ø½À´Ï´Ù.");
+		fprintf(stderr, "íŒŒì¼ì„ ë‹¤ì‹œ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		exit(1);
 	}
 }
+
